@@ -5,7 +5,7 @@
   <script lang="ts">
   	export let name: string;
   </script>
- 
+
   As well as validating the code for CI.
   */
 
@@ -80,10 +80,10 @@ const configEditor = new RegExp(/css:.|\n*}/gim);
 while ((match = configEditor.exec(rollupConfig)) != null) {
   if (foundCSS) {
     const endOfCSSIndex = match.index + 1;
-    rollupConfig =
-      `${rollupConfig.slice(0, endOfCSSIndex) 
-      },\n			preprocess: sveltePreprocess(),${ 
-      rollupConfig.slice(endOfCSSIndex)}`;
+    rollupConfig = `${rollupConfig.slice(
+      0,
+      endOfCSSIndex
+    )},\n			preprocess: sveltePreprocess(),${rollupConfig.slice(endOfCSSIndex)}`;
     break;
   }
   if (match[0].includes('css:')) foundCSS = true;

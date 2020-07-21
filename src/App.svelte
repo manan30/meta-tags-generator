@@ -1,9 +1,10 @@
 <style>
   main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    max-width: 15rem;
   }
 
   h1 {
