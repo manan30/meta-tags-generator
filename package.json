@@ -4,6 +4,9 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
+    "format": "npx prettier --write .",
+    "lint": "npx eslint .",
+    "lint:fixAll": "npx eslint --fix .",
     "start": "sirv public"
   },
   "devDependencies": {

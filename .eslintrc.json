@@ -1,4 +1,5 @@
 {
+  "root": true,
   "env": {
     "browser": true,
     "es6": true
@@ -13,5 +14,7 @@
     "sourceType": "module"
   },
   "plugins": ["prettier"],
-  "rules": {}
+  "rules": {
+    "no-console": "off"
+  }
 }
