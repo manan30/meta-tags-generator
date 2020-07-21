@@ -10,16 +10,31 @@
     max-width: 15rem;
   }
 
-  .main-container {
+  .form-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 1rem;
 
     height: auto;
     width: 35rem;
 
     border-radius: 0.5rem;
     box-shadow: 0 0 1.5rem #dddddd;
+  }
+
+  .button-container {
+    display: flex;
+  }
+
+  .button-container > button {
+    padding: 0.5rem 1rem;
+
+    border-radius: 0.25rem;
+    border: none;
+  }
+
+  .button-continue {
+    margin-left: auto;
   }
 
   @media (min-width: 640px) {
@@ -30,11 +45,50 @@
 </style>
 
 <main>
-  <div class="main-container">
-    <h1>Open Graph Tags</h1>
+  <div class="form-container">
+    {#if currentFormState === 1}
+      <OpenGraphForm />
+    {:else if currentFormState === 2}
+      <FacebookForm />
+    {:else}
+      <TwitterForm />
+    {/if}
+    <div class="button-container">
+      {#if currentFormState > 1}
+        <button
+          on:click={() => {
+            handleFormProgress('dec');
+          }}>
+          Back
+        </button>
+      {/if}
+      <button
+        class="button-continue"
+        on:click={() => {
+          handleFormProgress('inc');
+        }}>
+        Continue
+      </button>
+    </div>
   </div>
 </main>
 
 <script>
-  export let name;
+  import OpenGraphForm from './forms/OpenGraphForm.svelte';
+  import FacebookForm from './forms/FacebookForm.svelte';
+  import TwitterForm from './forms/TwitterForm.svelte';
+
+  let currentFormState = 1;
+
+  $: console.log(currentFormState);
+
+  function handleFormProgress(type) {
+    if (type === 'inc' && currentFormState < 3) {
+      currentFormState += 1;
+    }
+
+    if (type === 'dec' && currentFormState > 1) {
+      currentFormState -= 1;
+    }
+  }
 </script>
