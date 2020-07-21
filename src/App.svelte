@@ -4,14 +4,22 @@
     align-items: center;
     justify-content: center;
 
+    height: 100%;
+    width: 100%;
+
     max-width: 15rem;
   }
 
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: auto;
+    width: 35rem;
+
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1.5rem #dddddd;
   }
 
   @media (min-width: 640px) {
@@ -22,12 +30,9 @@
 </style>
 
 <main>
-  <h1>Hello {name}!</h1>
-  <p>
-    Visit the
-    <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
-    to learn how to build Svelte apps.
-  </p>
+  <div class="main-container">
+    <h1>Open Graph Tags</h1>
+  </div>
 </main>
 
 <script>
