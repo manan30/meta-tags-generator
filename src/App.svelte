@@ -31,6 +31,12 @@
 
     border-radius: 0.25rem;
     border: none;
+
+    color: #fdfff7;
+
+    background-color: #25d09d;
+
+    cursor: pointer;
   }
 
   .button-continue {
