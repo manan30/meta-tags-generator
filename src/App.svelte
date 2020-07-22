@@ -16,10 +16,13 @@
     padding: 1rem;
 
     height: auto;
+    max-height: calc(70% - 2rem);
     width: 35rem;
 
     border-radius: 0.5rem;
     box-shadow: 0 0 1.5rem #dddddd;
+
+    overflow: auto;
   }
 
   .button-container {
