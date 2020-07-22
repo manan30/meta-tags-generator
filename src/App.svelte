@@ -53,7 +53,7 @@
   }
 </style>
 
-<main>
+<!-- <main>
   <div class="form-container">
     {#if currentFormState === 1}
       <OpenGraphForm />
@@ -80,9 +80,13 @@
       </button>
     </div>
   </div>
-</main>
+</main> -->
+<Router {routes} />
 
 <script>
+  import { Router } from '@sveltech/routify';
+  import { routes } from '@sveltech/routify/tmp/routes';
+
   import OpenGraphForm from './forms/OpenGraphForm.svelte';
   import FacebookForm from './forms/FacebookForm.svelte';
   import TwitterForm from './forms/TwitterForm.svelte';

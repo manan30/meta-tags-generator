@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public",
+    "dev": "routify -c dev:build",
+    "dev:build": "rollup -c -w",
+    "start": "sirv public --single",
     "format": "npx prettier --write .",
     "lint": "npx eslint .",
     "lint:fixAll": "npx eslint --fix ."
@@ -12,6 +13,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.4.0",
+    "@sveltech/routify": "1.9.4",
     "eslint": "7.5.0",
     "eslint-config-airbnb-base": "14.2.0",
     "eslint-config-prettier": "6.11.0",
