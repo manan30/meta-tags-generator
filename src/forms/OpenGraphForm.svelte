@@ -1,1 +1,5 @@
-<h1>Open Graph form</h1>
+<Input labelFor="Site" />
+
+<script>
+  import Input from '../components/Input.svelte';
+</script>

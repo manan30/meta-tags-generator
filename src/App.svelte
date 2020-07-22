@@ -86,8 +86,6 @@
 
   let currentFormState = 1;
 
-  $: console.log(currentFormState);
-
   function handleFormProgress(type) {
     if (type === 'inc' && currentFormState < 3) {
       currentFormState += 1;
