@@ -1,6 +1,7 @@
 <style>
   h3 {
-    text-align: center;
+    /* text-align: center; */
+    margin-bottom: 0.5rem;
   }
 
   .form-input-container {
@@ -19,7 +20,7 @@
 </style>
 
 <h3>Open Graph Tags</h3>
-<div style="margin: 0 1rem;">Required Tags *</div>
+<!-- <div style="margin: 0 1rem;">Required Tags *</div> -->
 <form>
   <div class="form-input-container">
     <Input labelFor="Title" required={true} />
@@ -27,8 +28,8 @@
     <Input labelFor="Image" required={true} />
     <Input labelFor="URL" required={true} />
   </div>
-  <hr />
-  <div style="margin: 0 1rem;">Optional Tags</div>
+  <!-- <hr /> -->
+  <!-- <div style="margin: 0 1rem;">Optional Tags</div>
   <div class="form-input-container">
     <Input labelFor="Audio" />
     <Input labelFor="Description" />
@@ -42,7 +43,7 @@
     <Input labelFor="Video" />
     <Input labelFor="Video" />
     <Input labelFor="Video" />
-  </div>
+  </div> -->
 </form>
 
 <script>
