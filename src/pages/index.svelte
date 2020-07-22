@@ -72,8 +72,10 @@
   <div class="form-container">
     <div style="flex: 1 0 auto;">
       {#if currentFormState === 1}
-        <OpenGraphForm />
+        <SiteForm />
       {:else if currentFormState === 2}
+        <OpenGraphForm />
+      {:else if currentFormState === 3}
         <FacebookForm />
       {:else}
         <TwitterForm />
@@ -100,6 +102,7 @@
 </main>
 
 <script>
+  import SiteForm from '../forms/SiteForm.svelte';
   import OpenGraphForm from '../forms/OpenGraphForm.svelte';
   import FacebookForm from '../forms/FacebookForm.svelte';
   import TwitterForm from '../forms/TwitterForm.svelte';
@@ -107,7 +110,7 @@
   let currentFormState = 1;
 
   function handleFormProgress(type) {
-    if (type === 'inc' && currentFormState < 3) {
+    if (type === 'inc' && currentFormState < 4) {
       currentFormState += 1;
     }
 
