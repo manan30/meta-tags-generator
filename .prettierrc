@@ -2,5 +2,6 @@
   "printWidth": 80,
   "semi": true,
   "singleQuote": true,
-  "svelteSortOrder": "styles-markup-scripts"
+  "svelteSortOrder": "styles-markup-scripts",
+  "plugins": ["prettier-plugin-svelte"]
 }

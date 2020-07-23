@@ -20,7 +20,6 @@
 </style>
 
 <h3>Site Tags</h3>
-<!-- <div style="margin: 0 1rem;">Required Tags *</div> -->
 <form>
   <div class="form-input-container">
     <Input labelFor="Title" required={true} />
@@ -32,4 +31,8 @@
 
 <script>
   import Input from '../components/Input.svelte';
+
+  const siteFormState = {
+    title: '',
+  };
 </script>
