@@ -7,7 +7,7 @@
     "dev:build": "rollup -c -w",
     "start": "sirv public --single",
     "format": "npx prettier --write .",
-    "lint": "npx eslint .",
+    "lint": "npx eslint --ext svelte .",
     "lint:fixAll": "npx eslint --fix ."
   },
   "devDependencies": {
