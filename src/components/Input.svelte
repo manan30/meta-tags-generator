@@ -49,15 +49,17 @@
     type={inputType}
     value={inputValue}
     on:input={handleInput}
+    on:focus={() => handleFocus(true)}
+    on:blur={() => handleFocus(false)}
     {required} />
   <label for={labelFor.toLowerCase()}>{labelFor}</label>
 </div>
 
 <script>
-  export let labelFor;
-  export let required;
+  export let labelFor = '';
+  export let required = false;
   export let inputType = 'text';
-  export let inputCallback;
+  export let inputCallback = () => {};
 
   let inputValue = '';
   let isFocused = false;
@@ -66,9 +68,9 @@
     inputValue = e.target.value;
   };
 
-  const handleFocus = (hasFocus) => {
+  const handleFocus = (hasFocus = false) => {
     isFocused = hasFocus;
   };
 
-  console.log({ inputValue, isFocused });
+  $: if (!isFocused) inputCallback(labelFor.toLowerCase(), inputValue);
 </script>

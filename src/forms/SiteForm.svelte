@@ -22,17 +22,19 @@
 <h3>Site Tags</h3>
 <form>
   <div class="form-input-container">
-    <Input labelFor="Title" required={true} />
-    <Input labelFor="Type" required={true} />
-    <Input labelFor="Image" required={true} />
-    <Input labelFor="URL" required={true} />
+    <Input labelFor="Title" required={true} inputCallback={handleInputChange} />
+    <Input labelFor="Type" required={true} inputCallback={handleInputChange} />
+    <Input labelFor="Image" required={true} inputCallback={handleInputChange} />
+    <Input labelFor="URL" required={true} inputCallback={handleInputChange} />
   </div>
 </form>
 
 <script>
   import Input from '../components/Input.svelte';
 
-  const siteFormState = {
-    title: '',
+  const siteFormState = {};
+
+  const handleInputChange = (key, value) => {
+    siteFormState[key] = value;
   };
 </script>
